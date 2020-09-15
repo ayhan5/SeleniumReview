@@ -2,6 +2,8 @@ package com.techproed.smoketests;
 
 
 import com.techproed.pages.FhcTripHotelCreatePage;
+import com.techproed.utilities.ConfigurationReader;
+import com.techproed.utilities.Driver;
 import com.techproed.utilities.TestBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -41,13 +43,13 @@ public class FhcTripHotelCreateTest extends TestBase {
 
         createPage.saveButonu.click();
 
-//        Thread.sleep(3000);
-//        Assert.assertTrue(createPage.basariliYazisi.isDisplayed());
+        //Thread.sleep(3000);
+        //Assert.assertTrue(createPage.basariliYazisi.isDisplayed());
 
         WebDriverWait wait = new WebDriverWait(driver , 60);
-        WebElement message = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("bootbox-body")));
-//        boolean esitMi = wait.until(ExpectedConditions.textToBe( By.className("bootbox-body"),"Hotel was inserted successfully"));
-//        Assert.assertTrue(esitMi);
+        //WebElement message = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("bootbox-body")));
+        boolean esitMi = wait.until(ExpectedConditions.textToBe( By.className("bootbox-body"),"Hotel was inserted successfully"));
+        Assert.assertTrue(esitMi);
 
     }
 
